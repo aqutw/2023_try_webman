@@ -13,18 +13,21 @@
  */
 
 return [
-  'mysql' => [
-    'driver'      => 'mysql',
-    'host'        => '127.0.0.1',
-    'port'        => 3306,
-    'database'    => 'webman',
-    'username'    => 'root',
-    'password'    => file_get_contents('/tmp/mysqlpwd.txt'),
-    'unix_socket' => '',
-    'charset'     => 'utf8',
-    'collation'   => 'utf8_unicode_ci',
-    'prefix'      => '',
-    'strict'      => true,
-    'engine'      => null,
-  ],
+  'default' => 'mysql',
+  'connections' => [
+    'mysql' => [
+      'driver'      => 'mysql',
+      'host'        => '127.0.0.1',
+      'port'        => 3306,
+      'database'    => 'webman',
+      'username'    => 'root',
+      'password'    => trim(file_get_contents('/tmp/mysqlpwd.txt')),
+      'unix_socket' => '',
+      'charset'     => 'utf8',
+      'collation'   => 'utf8_unicode_ci',
+      'prefix'      => '',
+      'strict'      => true,
+      'engine'      => null,
+    ],
+  ]
 ];

@@ -9,9 +9,9 @@ class IndexController
 {
     public function index(Request $request)
     {
-        $users = Db::table('users')->where('name', 'John')->first();
-                //Db::connection('mysql')->table('users')->where('name', 'John')->first();
-        return response('hello webman' . json_encode($users));
+        // $users = Db::table('users')->where('name', 'John')->first();
+        $users = Db::connection('mysql')->table('users')->where('name', 'John')->first();
+        return response(time() . ' hello webman' . json_encode($users));
     }
 
     public function test(Request $request)
