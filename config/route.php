@@ -18,4 +18,12 @@ Route::any('/test2', function ($request) {
   return response('test2');
 });
 
-Route::any('/user/{id}', [app\controller\UserController::class, 'get']);
+// Route::any('/user/{id}', [app\controller\UserController::class, 'get']);
+
+// 匹配 /user /user/123 和 /user/abc   (no /user/)
+Route::any('/user[/{name}]', function ($request, $name = null) {
+  return response('route test: ' . ($name ?? 'tom'));
+});
+Route::any('/user/', function ($request, $name = null) {
+  return response('route test(2): ' . ($name ?? 'tom'));
+});

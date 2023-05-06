@@ -6,10 +6,10 @@ use support\Request;
 
 class UserController
 {
-    public function index(Request $request)
-    {
-        return response('hello user ctrl');
-    }
+    // public function index(Request $request)
+    // {
+    //     return response('hello user ctrl');
+    // }
 
     public function test(Request $request)
     {
