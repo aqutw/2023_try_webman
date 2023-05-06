@@ -25,5 +25,5 @@ Route::any('/user[/{name}]', function ($request, $name = null) {
   return response('route test: ' . ($name ?? 'tom'));
 });
 Route::any('/user/', function ($request, $name = null) {
-  return response('route test(2): ' . ($name ?? 'tom'));
-});
+  return response('route test(2): ' . ($name ?? 'tom') . '#' . $request->TryMiddle1N);
+})->middleware([app\middleware\TryMiddle1::class]);
