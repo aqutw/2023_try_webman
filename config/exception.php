@@ -14,4 +14,5 @@
 
 return [
     '' => support\exception\Handler::class,
+    'admin' => upport\exception\Handler::class, // upport\exception\AdminHandler::class,
 ];
