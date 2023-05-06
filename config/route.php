@@ -14,8 +14,8 @@
 
 use Webman\Route;
 
+Route::any('/test2', function ($request) {
+  return response('test2');
+});
 
-
-
-
-
+Route::any('/user/{id}', [app\controller\UserController::class, 'get']);
