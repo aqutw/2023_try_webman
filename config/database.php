@@ -12,4 +12,19 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-return [];
+return [
+  'mysql' => [
+    'driver'      => 'mysql',
+    'host'        => '127.0.0.1',
+    'port'        => 3306,
+    'database'    => 'webman',
+    'username'    => 'root',
+    'password'    => file_get_contents('/tmp/mysqlpwd.txt'),
+    'unix_socket' => '',
+    'charset'     => 'utf8',
+    'collation'   => 'utf8_unicode_ci',
+    'prefix'      => '',
+    'strict'      => true,
+    'engine'      => null,
+  ],
+];

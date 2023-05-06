@@ -3,12 +3,15 @@
 namespace app\controller;
 
 use support\Request;
+use support\Db;
 
 class IndexController
 {
     public function index(Request $request)
     {
-        return response('hello webman');
+        $users = Db::table('users')->where('name', 'John')->first();
+                //Db::connection('mysql')->table('users')->where('name', 'John')->first();
+        return response('hello webman' . json_encode($users));
     }
 
     public function test(Request $request)
